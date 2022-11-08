@@ -1,0 +1,443 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "22456c96-12ef-4e95-9577-4718820a30f4",
+   "metadata": {},
+   "source": [
+    "Question 1\n",
+    "\n",
+    "Write a program that will find all numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both included). The numbers obtained should be printed in a list.\n",
+    "\n",
+    "Hint: Consider using the range(#begin, #end) method."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "4020a95e-7a3b-47e5-a2f5-805214525d1e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "lot = range(2000, 3201)\n",
+    "lot1 = []\n",
+    "for num in lot:\n",
+    "    if num %7 == 0 and num % 5 !=0:\n",
+    "        lot1.append(num)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "7485db93-c6f0-416f-93ba-2ce12e332fc8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2002, 2009, 2016, 2023, 2037, 2044, 2051, 2058, 2072, 2079, 2086, 2093, 2107, 2114, 2121, 2128, 2142, 2149, 2156, 2163, 2177, 2184, 2191, 2198, 2212, 2219, 2226, 2233, 2247, 2254, 2261, 2268, 2282, 2289, 2296, 2303, 2317, 2324, 2331, 2338, 2352, 2359, 2366, 2373, 2387, 2394, 2401, 2408, 2422, 2429, 2436, 2443, 2457, 2464, 2471, 2478, 2492, 2499, 2506, 2513, 2527, 2534, 2541, 2548, 2562, 2569, 2576, 2583, 2597, 2604, 2611, 2618, 2632, 2639, 2646, 2653, 2667, 2674, 2681, 2688, 2702, 2709, 2716, 2723, 2737, 2744, 2751, 2758, 2772, 2779, 2786, 2793, 2807, 2814, 2821, 2828, 2842, 2849, 2856, 2863, 2877, 2884, 2891, 2898, 2912, 2919, 2926, 2933, 2947, 2954, 2961, 2968, 2982, 2989, 2996, 3003, 3017, 3024, 3031, 3038, 3052, 3059, 3066, 3073, 3087, 3094, 3101, 3108, 3122, 3129, 3136, 3143, 3157, 3164, 3171, 3178, 3192, 3199]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(lot1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "931caccd-05eb-4151-87b7-5aa96dd492a8",
+   "metadata": {},
+   "source": [
+    "Question 2 \n",
+    "Write a program that can compute the factorial of a given number. (The factorial of n is the product of all positive integers less than or equal to n.) For example: For factorial(5)= 5 x 4 x 3 x 2 x 1 the result is 120 (i.e. factorial (0)=1)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "1c496df6-9da1-4db3-9730-f4441bc8ec76",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def factorial(n):\n",
+    "    if n>1:\n",
+    "        return (n* factorial(n-1))\n",
+    "    elif n <=1:\n",
+    "        return 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "60042415-bee1-45e3-bddb-09b9849e7da2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1"
+      ]
+     },
+     "execution_count": 35,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "factorial(-6)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cd5567f7-9a02-48e2-b832-698deab217fb",
+   "metadata": {},
+   "source": [
+    "Question 3 \n",
+    "\n",
+    "With a given integer number n, write a program to generate a dictionary that contains (i, i*i) such that is an integral number between 1 and n (both included).\n",
+    "Then, the program should print the dictionary. \n",
+    "Suppose the following input is supplied to the program: 8 Then, the output should be: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64} "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "0b390945-ce3a-49f6-9005-2940e531b448",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def sqr(a,b):\n",
+    "    dic = {}\n",
+    "    for i in range (a,b):\n",
+    "        dic.update({i:i*i})\n",
+    "    print(dic)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "bdae7f9d-1320-4d32-843f-cf63a4af39d0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225, 16: 256, 17: 289, 18: 324, 19: 361, 20: 400, 21: 441, 22: 484, 23: 529, 24: 576, 25: 625, 26: 676, 27: 729, 28: 784, 29: 841, 30: 900, 31: 961, 32: 1024, 33: 1089, 34: 1156, 35: 1225, 36: 1296, 37: 1369, 38: 1444, 39: 1521}\n"
+     ]
+    }
+   ],
+   "source": [
+    "sqr(1,40)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e4f0602f-39f4-4dd4-b805-13294594589c",
+   "metadata": {},
+   "source": [
+    "Question 4 \n",
+    "\n",
+    "Given a non-empty string and an integral n, return a new string where the char at index n has been removed. The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive). \n",
+    "\n",
+    "missing_char('kitten', 1) → 'ktten'    for example here we remove \"i\" which is located in the index 1\n",
+    "\n",
+    "missing_char('kitten', 0) → 'itten'   here we remove \"k\" which is in the index 0\n",
+    "\n",
+    "missing_char('kitten', 4) → 'kittn'   here we remove \"e\" which is in the index 4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "28f06355-dbd6-41f2-922d-d0c88d9be9e1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def missing_char(string, n):\n",
+    "    new_string = string.replace(string[n], '', 1)\n",
+    "    return new_string"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "f9da573f-f1e7-4ed6-9616-f92d062c39c4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Eephants'"
+      ]
+     },
+     "execution_count": 43,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "missing_char('Elephants', 1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1f2c46f6-6a78-4362-bfde-fd436153c38a",
+   "metadata": {},
+   "source": [
+    "Question 5 \n",
+    "\n",
+    "Write a NumPy program to convert a NumPy array into a Python list structure.\n",
+    "\n",
+    "Expected output: \n",
+    "\n",
+    "Original array elements: [[0 1] [2 3] [4 5]] \n",
+    "\n",
+    "Array to list: [[0, 1], [2, 3], [4, 5]] \n",
+    " \n",
+    "\n",
+    "Hint: We can use the to_list() function to ensure the conversion."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "id": "09d0d65d-a14f-478a-9cc8-8848e59b2331",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "id": "d9a1d929-d7be-41bf-aa31-cadcebe6c1f0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "m = np.array([[0,1],[2,3],[4,5]])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "id": "d5da8356-7329-44bf-ae19-41e4bc535c3e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[0 1]\n",
+      " [2 3]\n",
+      " [4 5]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (m)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "19d744f4-26da-4138-8c5b-21092a049ce1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[0, 1], [2, 3], [4, 5]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "so = m.tolist()\n",
+    "print (so)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "de271607-9e88-4f02-a30e-8ac390f5feec",
+   "metadata": {},
+   "source": [
+    "Question 6\n",
+    "\n",
+    "Write a NumPy program to compute the covariance matrix of two given arrays. \n",
+    "\n",
+    "Original array1: [0 1 2] \n",
+    "\n",
+    "Original array2: [2 1 0] \n",
+    "\n",
+    "Covariance matrix of the said arrays: [[ 1. -1.] [-1. 1.]]\n",
+    " \n",
+    "\n",
+    "Hint: We can use the np.cov() function to calculate the covariance between these two arrays"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ae3767d1-3ad5-4570-b1cd-7506f2923922",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "3988939e-6ee1-4c4f-9853-6bd6243d46a9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0 1 2]\n",
+      "[2 1 0]\n"
+     ]
+    }
+   ],
+   "source": [
+    "tell = np.array([0,1,2])\n",
+    "me = np.array([2,1,0])\n",
+    "print(tell)\n",
+    "print(me)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "d3385e8b-9b0e-4342-b045-5d746c5519ae",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 1. -1.]\n",
+      " [-1.  1.]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(np.cov(tell,me)) #covaariance"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b895fc08-96bd-4b5d-af7e-aaf772bf8028",
+   "metadata": {},
+   "source": [
+    "Question 7\n",
+    "\n",
+    "Question: Write a program that calculates and prints the value according to the given formula: Q= Square root of [(2 * C * D)/H] \n",
+    "\n",
+    "The following are the fixed values of C and H: C is 50. H is 30. \n",
+    "\n",
+    "D is the variable whose values should be input into your program in a comma-separated sequence. (That means D contains more than value)\n",
+    "\n",
+    "Example: Let's assume the following comma-separated input sequence is given to the program: 100,150,180 The output of the program should be 18,22,24 \n",
+    "\n",
+    "To further explain this, we will obtain a result for each value of D:  Q1= Square root of [(2 * C * 100)/H] =18, Q2= Square root of [(2 * C * 150)/H] = 22 and Q3 = Square root of [(2 * C * 180)/H]  = 24\n",
+    "\n",
+    "Hint: If the output received is in decimal form, it should be rounded off to its nearest value. For example, if the output received is 26.0, it should be printed as 26. In case of input data being supplied to the question, it should be assumed to be a console input. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "eadd13ad-670a-403e-bf2d-d7464d88b23e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "c = 50\n",
+    "h = 30\n",
+    "d = []\n",
+    "def sqr(values):\n",
+    "    for me in values:\n",
+    "        d.append(int(((2*c*me)/h)**0.5))\n",
+    "    return d"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "id": "38a285ba-866a-4328-b86d-c495a434eb0a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[10, 16, 20]"
+      ]
+     },
+     "execution_count": 74,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "sqr([36, 81, 125])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f5bb89da-d9be-4503-8e0a-d8611fd5adb3",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b4f38bbe-94c5-4477-b64e-effb3d87a56b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "552c9b39-d5d9-44ed-b5ba-e8a499a50e87",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2ed2863b-b894-4ca3-bfc4-88444eb01380",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
